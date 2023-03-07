@@ -1,0 +1,64 @@
+﻿@page
+@model CsPharma_V4.Pages.EstadoPedido.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>borrar</h1>
+
+<h3>¿Estas seguro que quieres eliminar?</h3>
+<div>
+    <h4>TdcTchEstadoPedido</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.MdUuid)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.MdUuid)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.MdDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.MdDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.CodPedido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.CodPedido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.CodEstadoDevolucionNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.CodEstadoDevolucionNavigation.CodEstadoDevolucion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.CodEstadoEnvioNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.CodEstadoEnvioNavigation.CodEstadoEnvio)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.CodEstadoPagoNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.CodEstadoPagoNavigation.CodEstadoPago)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.CodLineaNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.CodLineaNavigation.CodLinea)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="TdcTchEstadoPedido.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">volver</a>
+    </form>
+</div>

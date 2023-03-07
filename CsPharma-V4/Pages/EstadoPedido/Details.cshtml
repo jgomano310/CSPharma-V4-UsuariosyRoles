@@ -1,0 +1,61 @@
+﻿@page
+@model CsPharma_V4.Pages.EstadoPedido.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>detalles</h1>
+
+<div>
+    <h4>TdcTchEstadoPedido</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.MdUuid)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.MdUuid)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.MdDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.MdDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.CodPedido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.CodPedido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.CodEstadoDevolucionNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.CodEstadoDevolucionNavigation.CodEstadoDevolucion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.CodEstadoEnvioNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.CodEstadoEnvioNavigation.CodEstadoEnvio)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.CodEstadoPagoNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.CodEstadoPagoNavigation.CodEstadoPago)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TdcTchEstadoPedido.CodLineaNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TdcTchEstadoPedido.CodLineaNavigation.CodLinea)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TdcTchEstadoPedido?.Id">Editar</a> |
+    <a asp-page="./Index">Volver</a>
+</div>

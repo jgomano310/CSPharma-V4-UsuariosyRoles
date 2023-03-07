@@ -1,0 +1,70 @@
+﻿@page
+@model CsPharma_V4.Pages.Usuarios.editarModel
+@{
+}
+
+<div class="body">
+    <div class="py-5 text-center">
+        <h2>Editar usuario</h2>
+    </div>
+
+    <div class="row g-5">
+        <div class="col-md-7 col-lg-8">
+
+            @using (Html.BeginForm("OnPost", "User"))
+            {
+                @Html.HiddenFor(h => @Model.UserModel.User.Id)
+                ;
+
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label asp-for="UserModel.User.UserName" class="form-label"></label>
+                        <input asp-for="UserModel.User.UserName" class="form-control" autocomplete="username" aria-required="true" />
+                        <span asp-validation-for="UserModel.User.UserName" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <label asp-for="UserModel.User.Email" class="form-label"></label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text"></span>
+                            <input asp-for="UserModel.User.Email" class="form-control" autocomplete="username" aria-required="true" />
+                            <span asp-validation-for="UserModel.User.Email" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label asp-for="UserModel.User.PhoneNumber" class="form-label"></label>
+                        <input asp-for="UserModel.User.PhoneNumber" class="form-control" autocomplete="username" aria-required="true" />
+                        <span asp-validation-for="UserModel.User.PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <h4 class="mb-3">Roles</h4>
+
+                <div class="my-3">
+                    @for (int i = 0; i < @Model.UserModel.Roles.Count(); i++)
+                    {
+                        <div class="form-check">
+                            @Html.CheckBoxFor(c => @Model.UserModel.Roles[i].Selected)
+                            @Html.HiddenFor(h => @Model.UserModel.Roles[i].Value)
+
+                            @Html.LabelFor(l => @Model.UserModel.Roles[i].Selected, @Model.UserModel.Roles[i].Text, new {@class="form-check-label"})
+                            @Html.HiddenFor(h => @Model.UserModel.Roles[i].Text)
+                        </div>
+                    }
+
+                </div>
+
+                <hr class="my-4">
+
+                <button asp-page-handler="Async" type="submit" class="w-100 btn btn-primary btn-lg" value="submit">Aceptar</button>
+            }
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="./Index">Volver</a>
+    </div>
+</div>

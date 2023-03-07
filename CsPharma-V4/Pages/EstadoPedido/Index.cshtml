@@ -1,0 +1,80 @@
+﻿@page
+@model CsPharma_V4.Pages.EstadoPedido.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Crear</a>
+</p>
+
+<form method="get">
+    <div class="form-group">
+        <label for="filtro">Filtro:</label>
+        <input type="text" name="filtrado" placeholder="Buscar" class="form-control" value="@Model.filtrado" />
+    </div>
+    <button type="submit">Buscar</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TdcTchEstadoPedido[0].MdUuid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdcTchEstadoPedido[0].MdDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdcTchEstadoPedido[0].CodPedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdcTchEstadoPedido[0].CodEstadoDevolucionNavigation.DesEstadoDevolucion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdcTchEstadoPedido[0].CodEstadoEnvioNavigation.DesEstadoEnvio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdcTchEstadoPedido[0].CodEstadoPagoNavigation.DesEstadoPago)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdcTchEstadoPedido[0].CodLineaNavigation.CodLinea)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TdcTchEstadoPedido) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdUuid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodPedido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEstadoDevolucionNavigation.DesEstadoDevolucion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEstadoEnvioNavigation.DesEstadoEnvio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEstadoPagoNavigation.DesEstadoPago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodLineaNavigation.CodLinea)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

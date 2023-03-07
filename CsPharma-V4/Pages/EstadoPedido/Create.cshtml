@@ -1,0 +1,60 @@
+﻿@page
+@model CsPharma_V4.Pages.EstadoPedido.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>crear</h1>
+
+<h4>TdcTchEstadoPedido</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TdcTchEstadoPedido.MdUuid" class="control-label"></label>
+                <input asp-for="TdcTchEstadoPedido.MdUuid" class="form-control" />
+                <span asp-validation-for="TdcTchEstadoPedido.MdUuid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdcTchEstadoPedido.MdDate" class="control-label"></label>
+                <input asp-for="TdcTchEstadoPedido.MdDate" class="form-control" />
+                <span asp-validation-for="TdcTchEstadoPedido.MdDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdcTchEstadoPedido.CodEstadoEnvio" class="control-label"></label>
+                <select asp-for="TdcTchEstadoPedido.CodEstadoEnvio" class ="form-control" asp-items="ViewBag.CodEstadoEnvio"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdcTchEstadoPedido.CodEstadoPago" class="control-label"></label>
+                <select asp-for="TdcTchEstadoPedido.CodEstadoPago" class ="form-control" asp-items="ViewBag.CodEstadoPago"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdcTchEstadoPedido.CodEstadoDevolucion" class="control-label"></label>
+                <select asp-for="TdcTchEstadoPedido.CodEstadoDevolucion" class ="form-control" asp-items="ViewBag.CodEstadoDevolucion"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdcTchEstadoPedido.CodPedido" class="control-label"></label>
+                <input asp-for="TdcTchEstadoPedido.CodPedido" class="form-control" />
+                <span asp-validation-for="TdcTchEstadoPedido.CodPedido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdcTchEstadoPedido.CodLinea" class="control-label"></label>
+                <select asp-for="TdcTchEstadoPedido.CodLinea" class ="form-control" asp-items="ViewBag.CodLinea"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

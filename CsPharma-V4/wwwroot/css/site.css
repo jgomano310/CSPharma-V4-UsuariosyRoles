@@ -1,0 +1,26 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.headerLetters {
+    color: #ffffff;
+}
+button{
+    border-color: #5dc1b9;
+    border-radius: 45%;
+   
+}
