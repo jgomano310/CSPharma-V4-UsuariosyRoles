@@ -29,12 +29,6 @@
                             <a class="nav-link text-white" asp-area="" asp-page="/Index">Inicio</a>
                         </li>
                         
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-page="/Privacy">Privado</a>
-                            </li>
-                        }
 
                         @if (User.Identity.IsAuthenticated)
                         {
@@ -43,34 +37,8 @@
                             </li>
                         }
 
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-page="/LineaDistribución/Index">LineaDistribución</a>
-                            </li>
-                        }
-
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-page="/EnvioPedido/Index">EnvioPedido</a>
-                            </li>
-                        }
-
-                         @if (User.Identity.IsAuthenticated)
-                        {
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-page="/PagoPedido/Index">PagoPedido</a>
-                            </li>
-                        }
-                        @if (User.Identity.IsAuthenticated)
-                        {
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-page="/DevoluciónPedido/Index">DevoluciónPedido</a>
-                            </li>
-                        }
+                      
+                        
                         @if (User.Identity.IsAuthenticated)
                         {
 

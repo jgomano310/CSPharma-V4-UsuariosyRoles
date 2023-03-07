@@ -56,9 +56,22 @@
         </dd>
     </dl>
     
-    <form method="post">
+    <form method="post" onsubmit="return confirmDelete();">
         <input type="hidden" asp-for="TdcTchEstadoPedido.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-page="./Index">volver</a>
     </form>
+
 </div>
+
+<script>
+    function confirmDelete() {
+        if (confirm("¿Estás seguro de que quieres eliminar este registro?")) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>
+

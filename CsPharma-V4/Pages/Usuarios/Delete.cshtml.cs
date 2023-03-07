@@ -1,10 +1,12 @@
 using CsPharma_V4.Areas.Identity.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace CsPharma_V4.Pages.Usuarios
 {
+    [Authorize(Roles = "Administradores, Empleados")]
     public class DeleteModel : PageModel
     {
         private readonly LoginContexto _contexto; // se crea un objeto de LoginContexto privado

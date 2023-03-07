@@ -1,6 +1,7 @@
 using CsPharma_V4.Areas.Identity.Data;
 using CsPharma_V4.Modelo;
 using CsPharma_V4.repositorios;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CsPharma_V4.Pages.Usuarios
 {
+    [Authorize(Roles = "Administradores, Empleados")]
     public class editarModel : PageModel
     {
         private readonly UnidadDeTrabajo _unidad;
